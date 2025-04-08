@@ -33,7 +33,7 @@ def list_all_student_data(student_data):
                 
 def add_student_data(student_data):
     student_id = input("Enter Student ID: ")
-    student_name = input("Enter Student Name Ln, Fn M.I.: ")
+    student_name = input("Enter Student Name (Ln, Fn M.I.): ")
     student_program = input("Enter Student Program: ")
     student_grade = input("Enter Student Grade: ")
     student_section = input("Enter Student Section: ")
@@ -84,7 +84,7 @@ def main_menu(student_data):
                 buffer()
                 
             case "2":  
-                add_student_record(student_data)
+                add_student_data(student_data)
                 buffer()
             
             case "3": 
