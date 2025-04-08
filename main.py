@@ -31,14 +31,14 @@ def list_all_student_data(student_data):
         for key, value in student.items():
             print(f"{key}: {value}")
                 
-def add_student_record(student_record):
+def add_student_data(student_data):
     student_id = input("Enter Student ID: ")
-    student_name = input("Enter Student Name (Surname, First Name M.I.): ")
+    student_name = input("Enter Student Name (Ln, Fn M.I.): ")
     student_program = input("Enter Student Program: ")
     student_grade = input("Enter Student Grade: ")
     student_section = input("Enter Student Section: ")
 
-    student_record.append({
+    student_data.append({
         "ID": student_id,
         "Name": student_name,
         "Program": student_program,
@@ -99,7 +99,7 @@ def main_menu(student_data):
                 buffer()
                 
             case "2":  
-                add_student_record(student_data)
+                add_student_data(student_data)
                 buffer()
             
             case "3": 
@@ -107,7 +107,7 @@ def main_menu(student_data):
                 pass
             
             case "4":
-                delete_student_record(student_data)    
+                delete_student_data(student_data)    
                 buffer()
             
             case "5":
