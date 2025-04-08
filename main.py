@@ -46,7 +46,7 @@ def add_student_data(student_data):
         "Section": student_section,
     })
     
-def delete_student_record(student_data):
+def delete_student_data(student_data):
     if not student_data:
         print("\nNo records to delete.")
         return
@@ -92,7 +92,7 @@ def main_menu(student_data):
                 pass
             
             case "4":
-                delete_student_record(student_data)    
+                delete_student_data(student_data)    
                 buffer()
             
             case "5":
