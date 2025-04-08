@@ -21,6 +21,21 @@ def clear_screen():
     
 def buffer():
     input("\nPress Enter to continue...")
+
+def add_student_record(student_record):
+    student_id = input("Enter Student ID: ")
+    student_name = input("Enter Student Name (Surname, First Name M.I.): ")
+    student_program = input("Enter Student Program: ")
+    student_grade = input("Enter Student Grade: ")
+    student_section = input("Enter Student Section: ")
+
+    student_record.append({
+        "ID": student_id,
+        "Name": student_name,
+        "Program": student_program,
+        "Grade": student_grade,
+        "Section": student_section,
+    })
             
 def main_menu(student_data):
     choice = ""
@@ -45,8 +60,8 @@ def main_menu(student_data):
                 pass
                 
             case "2":  
-                #TODO(CORDOVA): Implement add function 
-                pass
+                add_student_record(student_data)
+                buffer()
             
             case "3": 
                 #TODO(ARGUELLES): Implement update function   
