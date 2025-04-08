@@ -61,6 +61,10 @@ def delete_student_data(student_data):
         
     print(f"Student ID {delete_student_id} not found.")
     
+def print_specific_data(student):
+    for key, value in student.items():
+        print(f"{key}: {value}") 
+
 def search_student_data(student_data):
     if not student_data:
         print("\nNo records to search.")
@@ -71,7 +75,7 @@ def search_student_data(student_data):
     for student in student_data:
         if student["ID"] == search_student_id:
             print(f"Student ID {search_student_id} has been found.\n")
-            print(student)
+            print_specific_data(student)
             return
         
     print(f"Student ID {search_student_id} not found.")
