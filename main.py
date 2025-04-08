@@ -92,7 +92,7 @@ def main_menu(student_data):
                 pass
             
             case "4":
-                delete_student_record(student_data)    
+                delete_student_data(student_data)    
                 buffer()
             
             case "5":
