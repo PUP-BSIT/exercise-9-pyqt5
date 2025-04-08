@@ -41,18 +41,23 @@ def main_menu(student_data):
         
         match choice:
             case "1":   
+                #TODO(GUTIERREZ): Implement list all function
                 pass
                 
-            case "2":   
+            case "2":  
+                #TODO(CORDOVA): Implement add function 
                 pass
             
-            case "3":    
+            case "3": 
+                #TODO(ARGUELLES): Implement update function   
                 pass
             
-            case "4":     
+            case "4":
+                #TODO(CONDINO): Implement delete function     
                 pass
             
             case "5":
+                #TODO(CAYA): Implement search function
                 pass
             
             case "6":
