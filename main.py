@@ -22,6 +22,15 @@ def clear_screen():
 def buffer():
     input("\nPress Enter to continue...")
 
+def list_all_student_data(student_data):
+    if not student_data:
+        print("\nNo records to display.")
+        return
+    
+    for student in student_data:
+        for key, value in student.items():
+            print(f"{key}: {value}")
+                
 def add_student_record(student_record):
     student_id = input("Enter Student ID: ")
     student_name = input("Enter Student Name (Surname, First Name M.I.): ")
@@ -56,8 +65,8 @@ def main_menu(student_data):
         
         match choice:
             case "1":   
-                #TODO(GUTIERREZ): Implement list all function
-                pass
+                list_all_student_data(student_data)
+                buffer()
                 
             case "2":  
                 add_student_record(student_data)
