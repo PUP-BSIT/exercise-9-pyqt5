@@ -46,7 +46,7 @@ def add_student_record(student_record):
         "Section": student_section,
     })
     
-def delete_student_record(student_data):
+def delete_student_data(student_data):
     if not student_data:
         print("\nNo records to delete.")
         return
