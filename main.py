@@ -27,9 +27,15 @@ def list_all_student_data(student_data):
         print("\nNo records to display.")
         return
     
+    print("\n---------------Student Data----------------")
     for student in student_data:
-        for key, value in student.items():
-            print(f"{key}: {value}")
+        print(
+            f"Name: {student['Name']}\n"
+            f"ID: {student['ID']}\n" 
+            f"Program: {student['Program']}\n"
+            f"Grade and Section: {student['Grade']} - {student['Section']}"
+        )
+        print("-------------------------------------------")
                 
 def add_student_data(student_data):
     student_id = input("Enter Student ID: ")
