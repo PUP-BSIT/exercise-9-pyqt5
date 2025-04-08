@@ -46,7 +46,7 @@ def add_student_data(student_data):
         "Section": student_section,
     })
 
-def update_student_records(student_data):
+def update_student_data(student_data):
     if not student_data:
         print("\nNo records to update.")
         return
@@ -125,7 +125,7 @@ def main_menu(student_data):
                 buffer()
             
             case "3": 
-                update_student_records(student_data) 
+                update_student_data(student_data) 
                 buffer()
             
             case "4":
