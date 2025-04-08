@@ -22,14 +22,23 @@ def clear_screen():
 def buffer():
     input("\nPress Enter to continue...")
 
-def add_student_record(student_record):
+def list_all_student_data(student_data):
+    if not student_data:
+        print("\nNo records to display.")
+        return
+    
+    for student in student_data:
+        for key, value in student.items():
+            print(f"{key}: {value}")
+                
+def add_student_data(student_data):
     student_id = input("Enter Student ID: ")
-    student_name = input("Enter Student Name (Surname, First Name M.I.): ")
+    student_name = input("Enter Student Name (Ln, Fn M.I.): ")
     student_program = input("Enter Student Program: ")
     student_grade = input("Enter Student Grade: ")
     student_section = input("Enter Student Section: ")
 
-    student_record.append({
+    student_data.append({
         "ID": student_id,
         "Name": student_name,
         "Program": student_program,
@@ -39,9 +48,8 @@ def add_student_record(student_record):
 
 def update_student_records(student_data):
     if not student_data:
-        print("\nNo record to update.")
+        print("\nNo records to update.")
         return
-
 
     student_id = input("Enter Student ID: ")
 
@@ -56,6 +64,36 @@ def update_student_records(student_data):
         
     print(f"Student ID {student_id} not found.")
 
+def delete_student_data(student_data):
+    if not student_data:
+        print("\nNo records to delete.")
+        return
+    
+    delete_student_id = input("Enter Student ID: ")
+    
+    for student in student_data:
+        if student["ID"] == delete_student_id:
+            student_data.remove(student)  
+            print(f"Student ID {delete_student_id} has been deleted.")
+            return
+        
+    print(f"Student ID {delete_student_id} not found.")
+    
+def search_student_data(student_data):
+    if not student_data:
+        print("\nNo records to search.")
+        return
+    
+    search_student_id = input("Enter Student ID to search: ")
+    
+    for student in student_data:
+        if student["ID"] == search_student_id:
+            print(f"Student ID {search_student_id} has been found.\n")
+            print(student)
+            return
+        
+    print(f"Student ID {search_student_id} not found.")
+            
 def main_menu(student_data):
     choice = ""
     
@@ -75,11 +113,11 @@ def main_menu(student_data):
         
         match choice:
             case "1":   
-                #TODO(GUTIERREZ): Implement list all function
-                pass
+                list_all_student_data(student_data)
+                buffer()
                 
             case "2":  
-                add_student_record(student_data)
+                add_student_data(student_data)
                 buffer()
             
             case "3": 
@@ -87,12 +125,12 @@ def main_menu(student_data):
                 buffer()
             
             case "4":
-                #TODO(CONDINO): Implement delete function     
-                pass
+                delete_student_data(student_data)    
+                buffer()
             
             case "5":
-                #TODO(CAYA): Implement search function
-                pass
+                search_student_data(student_data)
+                buffer()
             
             case "6":
                 break
