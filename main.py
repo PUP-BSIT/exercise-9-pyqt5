@@ -45,6 +45,21 @@ def add_student_record(student_record):
         "Grade": student_grade,
         "Section": student_section,
     })
+    
+def delete_student_record(student_data):
+    if not student_data:
+        print("\nNo records to delete.")
+        return
+    
+    delete_student_id = input("Enter Student ID: ")
+    
+    for student in student_data:
+        if student["ID"] == delete_student_id:
+            student_data.remove(student)  
+            print(f"Student ID {delete_student_id} has been deleted.")
+            return
+        
+    print(f"Student ID {delete_student_id} not found.")
             
 def main_menu(student_data):
     choice = ""
@@ -77,8 +92,8 @@ def main_menu(student_data):
                 pass
             
             case "4":
-                #TODO(CONDINO): Implement delete function     
-                pass
+                delete_student_record(student_data)    
+                buffer()
             
             case "5":
                 #TODO(CAYA): Implement search function
