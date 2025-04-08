@@ -60,6 +60,21 @@ def delete_student_data(student_data):
             return
         
     print(f"Student ID {delete_student_id} not found.")
+    
+def search_student_data(student_data):
+    if not student_data:
+        print("\nNo records to search.")
+        return
+    
+    search_student_id = input("Enter Student ID to search: ")
+    
+    for student in student_data:
+        if student["ID"] == search_student_id:
+            print(f"Student ID {search_student_id} has been found.\n")
+            print(student)
+            return
+        
+    print(f"Student ID {search_student_id} not found.")
             
 def main_menu(student_data):
     choice = ""
@@ -96,8 +111,8 @@ def main_menu(student_data):
                 buffer()
             
             case "5":
-                #TODO(CAYA): Implement search function
-                pass
+                search_student_data(student_data)
+                buffer()
             
             case "6":
                 break
