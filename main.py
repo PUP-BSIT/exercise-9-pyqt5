@@ -53,13 +53,15 @@ def update_student_data(student_data):
 
     student_id = input("Enter Student ID: ")
 
+    print("\n--------------------------------------------------------\n")
+
     for student in student_data:
         if student["ID"] == student_id:
-            student["ID"] = input("Enter Student ID: ")
-            student["Name"] = input("Enter Student Name (Ln, Fn M.I.): ")
-            student["Program"] = input("Enter Student Program: ")
-            student["Grade"] = input("Enter Student Grade: ")
-            student["Section"] = input("Enter Student Section: ")
+            student["ID"] = input("Update Student ID: ")
+            student["Name"] = input("Update Student Name (Ln, Fn M.I.): ")
+            student["Program"] = input("Update Student Program: ")
+            student["Grade"] = input("Update Student Grade: ")
+            student["Section"] = input("Update Student Section: ")
             return
         
     print(f"Student ID {student_id} not found.")
