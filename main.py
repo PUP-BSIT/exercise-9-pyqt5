@@ -36,7 +36,26 @@ def add_student_record(student_record):
         "Grade": student_grade,
         "Section": student_section,
     })
-            
+
+def update_student_records(student_data):
+    if not student_data:
+        print("\nNo record to update.")
+        return
+
+
+    student_id = input("Enter Student ID: ")
+
+    for student in student_data:
+        if student["ID"] == student_id:
+            student["ID"] = input("Enter Student ID: ")
+            student["Name"] = input("Enter Student Name (Ln, Fn M.I.): ")
+            student["Program"] = input("Enter Student Program: ")
+            student["Grade"] = input("Enter Student Grade: ")
+            student["Section"] = input("Enter Student Section: ")
+            return
+        
+    print(f"Student ID {student_id} not found.")
+
 def main_menu(student_data):
     choice = ""
     
@@ -64,8 +83,8 @@ def main_menu(student_data):
                 buffer()
             
             case "3": 
-                #TODO(ARGUELLES): Implement update function   
-                pass
+                update_student_records(student_data) 
+                buffer()
             
             case "4":
                 #TODO(CONDINO): Implement delete function     
