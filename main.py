@@ -1,18 +1,5 @@
 import os
 
-'''
-"ID" will be the key for storing the student's unique identifier.
-"Name" will be the key for storing the student's name.
-"Program" will be the key for storing the student's program of study.
-"Grade" will be the key for storing the student's grade level.
-"Section" will be the key for storing the student's class section.
-student_id will be used for storing the student's unique identifier.
-student_name will be used for storing the student's name.
-student_program will be used for storing the student's program of study.
-student_grade will be used for storing the student's grade level.
-student_section will be used for storing the student's class section.
-'''
-
 student_data = []
 
 def clear_screen():
